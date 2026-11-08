@@ -1,0 +1,27 @@
+function selectionSort(arr){
+   
+    const length = arr.length;
+    if(arr.length <= 1){
+        return arr;
+    }
+
+    for(let i = 0; i < length - 1; i++){
+
+        let minIndex = i;
+
+        for(let j = i + 1; j < length ;j++){
+
+            if(arr[minIndex] > arr[j]){
+                minIndex = j;
+            }
+        }
+        if(minIndex !== i){
+            [arr[i],arr[minIndex]] = [arr[minIndex],arr[i]];
+        }
+    }
+
+    return arr;
+}
+
+//test case
+console.log(selectionSort([14,4,3,2,84,1,6]));
